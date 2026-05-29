@@ -45,6 +45,12 @@ export default function BeginnerPage() {
             link="/Learn/beginner/llm-cognition"
           />
 
+          <CourseCard
+            title="Prompt Basics"
+            desc="Learn how to write effective prompts and use AI correctly."
+            link="/learn/beginner/prompt-basics"
+          />
+
         </div>
 
       </div>
