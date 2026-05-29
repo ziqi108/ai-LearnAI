@@ -18,15 +18,15 @@ export const metadata: Metadata = {
   description: "Learn AI step by step",
 
   verification: {
-    google: "<meta name="google-site-verification" content="DeXQONqyH5_mOWI6uWedRrYXl4SPKo5AWyKf-qb6joc" />"  // ✅ 替换成你自己的验证码
+    google: "<meta name="google-site-verification" content="DeXQONqyH5_mOWI6uWedRrYXl4SPKo5AWyKf-qb6joc" />"  // ✅ 粘这里
   }
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html
       lang="en"
