@@ -39,6 +39,12 @@ export default function BeginnerPage() {
             link="/Learn/beginner/how-chatgpt-works"
           />
 
+          <CourseCard
+            title="大模型的认知 (LLM Cognition)"
+            desc="深入理解大语言模型的发展、原理和应用前景。"
+            link="/Learn/beginner/llm-cognition"
+          />
+
         </div>
 
       </div>
