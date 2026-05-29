@@ -1,65 +1,189 @@
-import Image from "next/image";
+import Link from "next/link";
+import type { CSSProperties } from "react";
+import { articles } from "../data/articles";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main style={{
+      background: "#f5f7fb",
+      minHeight: "100vh"
+    }}>
+
+      {/* HERO区域 */}
+      <section style={{
+        textAlign: "center",
+        padding: "80px 20px"
+      }}>
+        <h1 style={{ fontSize: "42px", lineHeight: "1.2" }}>
+          🚀 Learn AI, LLM & AGI From Scratch
+        </h1>
+
+        <p style={{
+          marginTop: "20px",
+          color: "#666",
+          fontSize: "18px"
+        }}>
+          Step-by-step guides to master AI, fine-tuning, and real-world projects.
+        </p>
+
+        <div style={{ marginTop: "30px" }}>
+          <Link href="/Learn">
+            <button style={btnPrimary}>Start Learning</button>
+          </Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Learn模块 */}
+      <section style={{
+        maxWidth: "1000px",
+        margin: "auto",
+        padding: "40px 20px"
+      }}>
+        <h2>📘 Learning Paths</h2>
+
+        <div style={grid}>
+
+          <Card
+            title="Beginner"
+            desc="Understand AI basics and concepts"
+            link="/Learn/beginner"
+          />
+
+          <Card
+            title="Intermediate"
+            desc="Learn how models work"
+            link="/Learn/intermediate"
+          />
+
+          <Card
+            title="Advanced"
+            desc="Fine-tune and deploy AI models"
+            link="/Learn/advanced"
+          />
+
+          <Card
+            title="Projects"
+            desc="Build real AI applications"
+            link="/Learn/projects"
+          />
+
         </div>
-      </main>
+      </section>
+
+      {/* 热门文章（SEO入口） */}
+      <section style={{
+        maxWidth: "1000px",
+        margin: "auto",
+        padding: "40px 20px"
+      }}>
+        <h2>🔥 Latest Articles</h2>
+
+        <div style={grid}>
+          {articles.slice(0, 4).map(article => (
+            <div key={article.slug} style={cardStyle}>
+              <div>
+                <h3>{article.title}</h3>
+                <p>{article.description}</p>
+              </div>
+
+              <div style={buttonRow}>
+                <Link href={`/articles/${article.slug}`}>
+                  <button style={btnSmall}>Read</button>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA 引导 */}
+      <section style={{
+        textAlign: "center",
+        padding: "60px 20px"
+      }}>
+        <h2>Ready to Build Your Own AI?</h2>
+
+        <p style={{ color: "#666" }}>
+          Start learning today and build real AI projects.
+        </p>
+
+        <Link href="/Learn">
+          <button style={btnPrimary}>Start Now</button>
+        </Link>
+      </section>
+
+    </main>
+  );
+}
+
+/* 卡片组件 */
+function Card({
+  title,
+  desc,
+  link,
+}: {
+  title: string;
+  desc: string;
+  link: string;
+}) {
+  return (
+    <div style={cardStyle}>
+      <div>
+        <h3>{title}</h3>
+        <p>{desc}</p>
+      </div>
+
+      <div style={buttonRow}>
+        <Link href={link}>
+          <button style={btnSmall}>Go</button>
+        </Link>
+      </div>
     </div>
   );
 }
+
+/* 样式 */
+
+const grid = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+  gap: "20px",
+  marginTop: "20px"
+};
+
+const cardStyle: CSSProperties = {
+  background: "#fff",
+  padding: "20px",
+  borderRadius: "12px",
+  boxShadow: "0 8px 20px rgba(0,0,0,0.08)",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  minHeight: "200px"
+};
+
+const buttonRow: CSSProperties = {
+  marginTop: "20px",
+  display: "flex",
+  alignItems: "center"
+};
+
+const btnPrimary = {
+  padding: "12px 20px",
+  background: "#0070f3",
+  color: "#fff",
+  border: "none",
+  borderRadius: "8px",
+  cursor: "pointer",
+  fontSize: "16px"
+};
+
+const btnSmall = {
+  marginTop: "10px",
+  padding: "6px 12px",
+  background: "#0070f3",
+  color: "#fff",
+  border: "none",
+  borderRadius: "6px",
+  cursor: "pointer"
+};
