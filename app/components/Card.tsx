@@ -1,4 +1,4 @@
-export default function Card({ title, desc, link }) {
+export default function Card({ title, desc, link }: { title: string; desc: string; link: string }) {
   return (
     <div style={{
       background: "#fff",
@@ -8,8 +8,9 @@ export default function Card({ title, desc, link }) {
     }}>
       <h3>{title}</h3>
       <p>{desc}</p>
-
-      Go</a>
+      <a href={link} style={{ color: "#0070f3", textDecoration: "none" }}>
+        Go →
+      </a>
     </div>
   );
 }
