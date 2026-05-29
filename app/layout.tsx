@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: "Learn AI step by step",
 
   verification: {
-    google: "<meta name="google-site-verification" content="DeXQONqyH5_mOWI6uWedRrYXl4SPKo5AWyKf-qb6joc" />"  // ✅ 粘这里
+    google: "DeXQONqyH5_mOWI6uWedRrYXl4SPKo5AWyKf-qb6joc"
   }
 };
 
