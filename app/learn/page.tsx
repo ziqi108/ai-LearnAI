@@ -39,7 +39,7 @@ export default function LearnPage() {
             <li>How ChatGPT works</li>
           </ul>
 
-          <Link href="/Learn/beginner" style={btnStyle}>Start Learning</Link>
+          <Link href="/learn/beginner" style={btnStyle}>Start Learning</Link>
         </div>
 
         {/* Intermediate */}
@@ -53,7 +53,7 @@ export default function LearnPage() {
             <li>Embeddings</li>
           </ul>
 
-          <Link href="/Learn/intermediate" style={btnStyle}>Continue</Link>
+          <Link href="/learn/intermediate" style={btnStyle}>Continue</Link>
         </div>
 
         {/* Advanced */}
@@ -67,7 +67,7 @@ export default function LearnPage() {
             <li>Deploy AI APIs</li>
           </ul>
 
-          <Link href="/Learn/advanced" style={btnStyle}>Explore</Link>
+          <Link href="/learn/advanced" style={btnStyle}>Explore</Link>
         </div>
 
         {/* Projects */}
@@ -81,7 +81,7 @@ export default function LearnPage() {
             <li>AI Writing Tool</li>
           </ul>
 
-          <Link href="/Learn/projects" style={btnStyle}>Build Now</Link>
+          <Link href="/learn/projects" style={btnStyle}>Build Now</Link>
         </div>
 
       </div>

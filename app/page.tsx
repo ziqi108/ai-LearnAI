@@ -27,7 +27,7 @@ export default function Home() {
         </p>
 
         <div style={{ marginTop: "30px" }}>
-          <Link href="/Learn">
+          <Link href="/learn">
             <button style={btnPrimary}>Start Learning</button>
           </Link>
         </div>
@@ -46,25 +46,25 @@ export default function Home() {
           <Card
             title="Beginner"
             desc="Understand AI basics and concepts"
-            link="/Learn/beginner"
+            link="/learn/beginner"
           />
 
           <Card
             title="Intermediate"
             desc="Learn how models work"
-            link="/Learn/intermediate"
+            link="/learn/intermediate"
           />
 
           <Card
             title="Advanced"
             desc="Fine-tune and deploy AI models"
-            link="/Learn/advanced"
+            link="/learn/advanced"
           />
 
           <Card
             title="Projects"
             desc="Build real AI applications"
-            link="/Learn/projects"
+            link="/learn/projects"
           />
 
         </div>
@@ -107,7 +107,7 @@ export default function Home() {
           Start learning today and build real AI projects.
         </p>
 
-        <Link href="/Learn">
+        <Link href="/learn">
           <button style={btnPrimary}>Start Now</button>
         </Link>
       </section>

@@ -156,7 +156,7 @@ Output in JSON format.`}
         >
           <h3>Next Lesson</h3>
 
-          /learn/beginner/what-is-llm
+          <Link href="/learn/beginner/what-is-llm">
             <button
               style={{
                 marginTop: "10px",
@@ -170,7 +170,7 @@ Output in JSON format.`}
             >
               What is LLM →
             </button>
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -187,10 +187,14 @@ Output in JSON format.`}
 
         <ul style={{ lineHeight: "2", marginTop: "20px" }}>
           <li>
-            /learn/beginner/what-is-aiWhat is AI</a>
+            <Link href="/learn/beginner/what-is-ai" style={{ textDecoration: "none", color: "#2563eb" }}>
+              What is AI
+            </Link>
           </li>
           <li>
-            /learn/beginner/what-is-llmWhat is LLM</a>
+            <Link href="/learn/beginner/what-is-llm" style={{ textDecoration: "none", color: "#2563eb" }}>
+              What is LLM
+            </Link>
           </li>
           <li style={{ fontWeight: "bold" }}>
             ✅ Prompt Basics

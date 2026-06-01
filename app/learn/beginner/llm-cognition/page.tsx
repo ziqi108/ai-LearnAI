@@ -278,7 +278,7 @@ const content = `
   </section>
 
   <section style="margin-top: 24px;">
-    <a href="/Learn/beginner/what-is-llm" style="display: inline-block; background: #2563eb; color: #fff; text-decoration: none; padding: 10px 16px; border-radius: 8px; font-weight: 700;">下一课：更深入理解LLM →</a>
+    <a href="/learn/beginner/what-is-llm" style="display: inline-block; background: #2563eb; color: #fff; text-decoration: none; padding: 10px 16px; border-radius: 8px; font-weight: 700;">下一课：更深入理解LLM →</a>
   </section>
 `;
 
@@ -297,7 +297,7 @@ export default function Lesson() {
         borderRadius: "16px",
         boxShadow: "0 10px 30px rgba(0,0,0,0.08)"
       }}>
-        <Link href="/Learn/beginner" style={{
+        <Link href="/learn/beginner" style={{
           display: "inline-block",
           marginBottom: "20px",
           color: "#2563eb",

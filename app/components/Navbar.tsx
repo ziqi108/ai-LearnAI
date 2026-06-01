@@ -17,7 +17,7 @@ export default function Navbar() {
 
       <div style={{ display: "flex", gap: "20px" }}>
         <Link href="/">Home</Link>
-        <Link href="/Learn">Learn</Link>
+        <Link href="/learn">Learn</Link>
         <Link href="/category/learning">Articles</Link>
       </div>
     </div>

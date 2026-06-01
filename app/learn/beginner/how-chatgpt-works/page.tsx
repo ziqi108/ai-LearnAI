@@ -58,7 +58,7 @@ export default function HowChatgptWorksLessonPage() {
         borderRadius: "16px",
         boxShadow: "0 10px 30px rgba(0,0,0,0.08)"
       }}>
-        <Link href="/Learn/beginner" style={{
+        <Link href="/learn/beginner" style={{
           display: "inline-block",
           marginBottom: "20px",
           color: "#2563eb",
