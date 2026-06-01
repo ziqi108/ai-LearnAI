@@ -2,6 +2,17 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import { articles } from "../data/articles";
 
+export const metadata = {
+  title: "AI Learning Hub | Learn AI, LLM & AGI From Scratch",
+  description: "Master artificial intelligence, large language models, and AGI through comprehensive step-by-step guides, tutorials, and real-world projects.",
+  keywords: "AI learning, LLM tutorial, machine learning, deep learning, prompt engineering, AI projects",
+  openGraph: {
+    title: "AI Learning Hub - Learn AI, LLM & AGI",
+    description: "Comprehensive courses and tutorials to master AI and build real-world projects.",
+    type: "website",
+  },
+};
+
 export default function Home() {
   return (
     <main style={{
@@ -12,57 +23,84 @@ export default function Home() {
       {/* HERO区域 */}
       <section style={{
         textAlign: "center",
-        padding: "80px 20px"
+        padding: "100px 20px 80px",
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        color: "#fff"
       }}>
-        <h1 style={{ fontSize: "42px", lineHeight: "1.2" }}>
+        <h1 style={{ 
+          fontSize: "3rem", 
+          lineHeight: "1.2",
+          fontWeight: "800",
+          marginBottom: "20px"
+        }}>
           🚀 Learn AI, LLM & AGI From Scratch
         </h1>
 
         <p style={{
           marginTop: "20px",
-          color: "#666",
-          fontSize: "18px"
+          color: "#e0e7ff",
+          fontSize: "1.2rem",
+          maxWidth: "600px",
+          margin: "20px auto 0"
         }}>
-          Step-by-step guides to master AI, fine-tuning, and real-world projects.
+          Step-by-step guides to master artificial intelligence, large language models, and real-world projects.
         </p>
 
-        <div style={{ marginTop: "30px" }}>
+        <div style={{ marginTop: "40px" }}>
           <Link href="/learn">
-            <button style={btnPrimary}>Start Learning</button>
+            <button style={{
+              padding: "14px 28px",
+              background: "#fff",
+              color: "#667eea",
+              border: "none",
+              borderRadius: "8px",
+              cursor: "pointer",
+              fontSize: "16px",
+              fontWeight: "600",
+              boxShadow: "0 10px 25px rgba(0,0,0,0.2)"
+            }}>
+              Start Learning →
+            </button>
           </Link>
         </div>
       </section>
 
       {/* Learn模块 */}
       <section style={{
-        maxWidth: "1000px",
-        margin: "auto",
-        padding: "40px 20px"
+        maxWidth: "1200px",
+        margin: "0 auto",
+        padding: "60px 20px"
       }}>
-        <h2>📘 Learning Paths</h2>
+        <h2 style={{
+          fontSize: "2rem",
+          marginBottom: "40px",
+          color: "#111827"
+        }}>
+          📘 Learning Paths
+        </h2>
 
         <div style={grid}>
 
           <Card
-            title="Beginner"
+            title="🟢 Beginner"
             desc="Understand AI basics and concepts"
             link="/learn/beginner"
           />
 
           <Card
-            title="Intermediate"
+            title="🟡 Intermediate"
             desc="Learn how models work"
             link="/learn/intermediate"
           />
 
           <Card
-            title="Advanced"
+            title="🔴 Advanced"
             desc="Fine-tune and deploy AI models"
             link="/learn/advanced"
           />
 
           <Card
-            title="Projects"
+            title="🚀 Projects"
             desc="Build real AI applications"
             link="/learn/projects"
           />
@@ -72,23 +110,41 @@ export default function Home() {
 
       {/* 热门文章（SEO入口） */}
       <section style={{
-        maxWidth: "1000px",
-        margin: "auto",
-        padding: "40px 20px"
+        maxWidth: "1200px",
+        margin: "0 auto",
+        padding: "60px 20px",
+        borderTop: "1px solid #e5e7eb"
       }}>
-        <h2>🔥 Latest Articles</h2>
+        <h2 style={{
+          fontSize: "2rem",
+          marginBottom: "40px",
+          color: "#111827"
+        }}>
+          🔥 Latest Articles
+        </h2>
 
         <div style={grid}>
           {articles.slice(0, 4).map(article => (
             <div key={article.slug} style={cardStyle}>
               <div>
-                <h3>{article.title}</h3>
-                <p>{article.description}</p>
+                <h3 style={{
+                  fontSize: "1.2rem",
+                  marginBottom: "10px",
+                  color: "#111827"
+                }}>
+                  {article.title}
+                </h3>
+                <p style={{
+                  color: "#666",
+                  lineHeight: "1.6"
+                }}>
+                  {article.description}
+                </p>
               </div>
 
               <div style={buttonRow}>
                 <Link href={`/articles/${article.slug}`}>
-                  <button style={btnSmall}>Read</button>
+                  <button style={btnSmall}>Read Article →</button>
                 </Link>
               </div>
             </div>
@@ -99,16 +155,39 @@ export default function Home() {
       {/* CTA 引导 */}
       <section style={{
         textAlign: "center",
-        padding: "60px 20px"
+        padding: "80px 20px",
+        background: "#f8fafc",
+        borderTop: "1px solid #e5e7eb"
       }}>
-        <h2>Ready to Build Your Own AI?</h2>
+        <h2 style={{
+          fontSize: "2rem",
+          marginBottom: "20px",
+          color: "#111827"
+        }}>
+          Ready to Build Your Own AI?
+        </h2>
 
-        <p style={{ color: "#666" }}>
-          Start learning today and build real AI projects.
+        <p style={{ 
+          color: "#666",
+          fontSize: "1.1rem",
+          marginBottom: "30px"
+        }}>
+          Start learning today and build real AI projects from scratch.
         </p>
 
         <Link href="/learn">
-          <button style={btnPrimary}>Start Now</button>
+          <button style={{
+            padding: "14px 28px",
+            background: "#0070f3",
+            color: "#fff",
+            border: "none",
+            borderRadius: "8px",
+            cursor: "pointer",
+            fontSize: "16px",
+            fontWeight: "600"
+          }}>
+            Begin Your Journey →
+          </button>
         </Link>
       </section>
 

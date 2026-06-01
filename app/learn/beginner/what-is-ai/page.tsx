@@ -1,5 +1,16 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "What is AI? | Complete Guide to Artificial Intelligence for Beginners",
+  description: "Learn what artificial intelligence is, its core concepts, applications, and why it matters. A comprehensive beginner's guide to AI fundamentals.",
+  keywords: "artificial intelligence, AI basics, machine learning, AI definition, AI applications",
+  openGraph: {
+    title: "What is AI? Comprehensive Beginner's Guide",
+    description: "Understand AI from the basics: definition, capabilities, and real-world applications.",
+    type: "article",
+  },
+};
+
 const content = `
   <section style="margin-bottom: 24px;">
     <p style="font-size: 1.05rem; color: #4b5563; line-height: 1.7;">
@@ -71,62 +82,114 @@ const content = `
 export default function Lesson() {
   return (
     <main style={{
-      padding: "40px 20px",
+      padding: "20px",
       background: "#f8fafc",
       minHeight: "100vh"
     }}>
-      <div style={{
+      {/* 面包屑导航 */}
+      <nav style={{
+        maxWidth: "900px",
+        margin: "0 auto 20px",
+        fontSize: "14px",
+        color: "#666"
+      }} aria-label="breadcrumb">
+        <Link href="/learn" style={{ color: "#2563eb", textDecoration: "none" }}>Learn</Link>
+        {" > "}
+        <Link href="/learn/beginner" style={{ color: "#2563eb", textDecoration: "none" }}>Beginner</Link>
+        {" > What is AI?"}
+      </nav>
+
+      <article style={{
         maxWidth: "900px",
         margin: "auto",
         background: "#fff",
-        padding: "28px 30px",
+        padding: "40px 50px",
         borderRadius: "16px",
         boxShadow: "0 10px 30px rgba(0,0,0,0.08)"
       }}>
+        {/* 返回链接 */}
         <Link href="/learn/beginner" style={{
           display: "inline-block",
           marginBottom: "20px",
           color: "#2563eb",
           textDecoration: "none",
-          fontWeight: "700"
+          fontWeight: "500",
+          fontSize: "14px"
         }}>
           ← Back to Beginner Track
         </Link>
 
+        {/* 课程标签 */}
         <div style={{
-          borderRadius: "12px",
-          padding: "10px 12px",
+          borderRadius: "8px",
+          padding: "8px 12px",
           background: "#dcfce7",
           color: "#166534",
           display: "inline-block",
           fontSize: "12px",
-          fontWeight: "700",
-          marginBottom: "14px"
+          fontWeight: "600",
+          marginBottom: "20px",
+          marginLeft: "0"
         }}>
-          Beginner Lesson 01
+          Beginner Lesson 01 · 8 min read
         </div>
 
-        <h1 style={{ fontSize: "2.4rem", margin: "0 0 12px 0", color: "#111827" }}>
+        {/* 主标题 */}
+        <h1 style={{ 
+          fontSize: "2.8rem", 
+          margin: "24px 0 20px 0", 
+          color: "#111827",
+          lineHeight: "1.2",
+          fontWeight: "800"
+        }}>
           What is AI?
         </h1>
 
+        {/* 子标题/导言 */}
         <p style={{
           color: "#4b5563",
-          lineHeight: "1.7",
-          marginBottom: "22px",
-          fontSize: "1.05rem"
+          lineHeight: "1.8",
+          marginBottom: "32px",
+          fontSize: "1.1rem",
+          borderLeft: "4px solid #2563eb",
+          paddingLeft: "20px"
         }}>
           从定义、核心能力到实际应用，本课帮助你建立对人工智能的系统认知。
         </p>
 
+        {/* 文章内容 */}
         <div
           style={{
             color: "#1f2937",
-            lineHeight: "1.7"
+            lineHeight: "1.8",
+            fontSize: "16px"
           }}
           dangerouslySetInnerHTML={{ __html: content }}
         />
-      </div>
+
+        {/* 底部导航 */}
+        <div style={{
+          marginTop: "48px",
+          paddingTop: "32px",
+          borderTop: "1px solid #e5e7eb"
+        }}>
+          <p style={{ fontSize: "14px", color: "#666", marginBottom: "12px" }}>Next Lesson</p>
+          <Link href="/learn/beginner/what-is-llm" style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
+            background: "#2563eb",
+            color: "#fff",
+            textDecoration: "none",
+            padding: "12px 20px",
+            borderRadius: "8px",
+            fontWeight: "600",
+            transition: "background 0.2s"
+          }}>
+            What is LLM? →
+          </Link>
+        </div>
+      </article>
     </main>
   );
 }

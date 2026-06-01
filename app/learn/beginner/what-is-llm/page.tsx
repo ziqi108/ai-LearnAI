@@ -1,5 +1,16 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "What is LLM? Large Language Models Explained for Beginners",
+  description: "Understand Large Language Models (LLM): what they are, how they work, and their real-world applications in AI. A comprehensive beginner's guide.",
+  keywords: "LLM, large language model, ChatGPT, language AI, natural language processing",
+  openGraph: {
+    title: "What is LLM? Complete Beginner's Guide to Large Language Models",
+    description: "Learn how LLMs work, why they're powerful, and how they're applied in real products.",
+    type: "article",
+  },
+};
+
 const content = `
   <section style="margin-bottom: 24px;">
     <p style="font-size: 1.05rem; color: #4b5563; line-height: 1.7;">
@@ -58,15 +69,28 @@ const content = `
 export default function WhatIsLlmLessonPage() {
   return (
     <main style={{
-      padding: "40px 20px",
+      padding: "20px",
       background: "#f8fafc",
       minHeight: "100vh"
     }}>
-      <div style={{
+      {/* 面包屑导航 */}
+      <nav style={{
+        maxWidth: "900px",
+        margin: "0 auto 20px",
+        fontSize: "14px",
+        color: "#666"
+      }} aria-label="breadcrumb">
+        <Link href="/learn" style={{ color: "#2563eb", textDecoration: "none" }}>Learn</Link>
+        {" > "}
+        <Link href="/learn/beginner" style={{ color: "#2563eb", textDecoration: "none" }}>Beginner</Link>
+        {" > What is LLM?"}
+      </nav>
+
+      <article style={{
         maxWidth: "900px",
         margin: "auto",
         background: "#fff",
-        padding: "28px 30px",
+        padding: "40px 50px",
         borderRadius: "16px",
         boxShadow: "0 10px 30px rgba(0,0,0,0.08)"
       }}>
@@ -75,33 +99,43 @@ export default function WhatIsLlmLessonPage() {
           marginBottom: "20px",
           color: "#2563eb",
           textDecoration: "none",
-          fontWeight: "700"
+          fontWeight: "500",
+          fontSize: "14px"
         }}>
           ← Back to Beginner Track
         </Link>
 
         <div style={{
-          borderRadius: "12px",
-          padding: "10px 12px",
+          borderRadius: "8px",
+          padding: "8px 12px",
           background: "#fef3c7",
           color: "#92400e",
           display: "inline-block",
           fontSize: "12px",
-          fontWeight: "700",
-          marginBottom: "14px"
+          fontWeight: "600",
+          marginBottom: "20px",
+          marginLeft: "0"
         }}>
-          Beginner Lesson 02
+          Beginner Lesson 02 · 7 min read
         </div>
 
-        <h1 style={{ fontSize: "2.4rem", margin: "0 0 12px 0", color: "#111827" }}>
+        <h1 style={{ 
+          fontSize: "2.8rem", 
+          margin: "24px 0 20px 0", 
+          color: "#111827",
+          lineHeight: "1.2",
+          fontWeight: "800"
+        }}>
           What is LLM?
         </h1>
 
         <p style={{
           color: "#4b5563",
-          lineHeight: "1.7",
-          marginBottom: "22px",
-          fontSize: "1.05rem"
+          lineHeight: "1.8",
+          marginBottom: "32px",
+          fontSize: "1.1rem",
+          borderLeft: "4px solid #2563eb",
+          paddingLeft: "20px"
         }}>
           这一节带你理解大语言模型为什么能写字、解释概念、回答问题。
         </p>
@@ -109,11 +143,35 @@ export default function WhatIsLlmLessonPage() {
         <div
           style={{
             color: "#1f2937",
-            lineHeight: "1.7"
+            lineHeight: "1.8",
+            fontSize: "16px"
           }}
           dangerouslySetInnerHTML={{ __html: content }}
         />
-      </div>
+
+        {/* 底部导航 */}
+        <div style={{
+          marginTop: "48px",
+          paddingTop: "32px",
+          borderTop: "1px solid #e5e7eb"
+        }}>
+          <p style={{ fontSize: "14px", color: "#666", marginBottom: "12px" }}>Next Lesson</p>
+          <Link href="/learn/beginner/how-chatgpt-works" style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
+            background: "#2563eb",
+            color: "#fff",
+            textDecoration: "none",
+            padding: "12px 20px",
+            borderRadius: "8px",
+            fontWeight: "600",
+            transition: "background 0.2s"
+          }}>
+            How ChatGPT Works? →
+          </Link>
+        </div>
+      </article>
     </main>
-  );
+  );;
 }

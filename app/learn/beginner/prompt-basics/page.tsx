@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "What is Prompt? Beginner Guide to Prompt Engineering",
   description: "Learn what prompt is and how to use prompt engineering effectively.",
