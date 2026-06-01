@@ -1,25 +1,66 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "What is AI? | Complete Guide to Artificial Intelligence for Beginners",
-  description: "Learn what artificial intelligence is, its core concepts, applications, and why it matters. A comprehensive beginner's guide to AI fundamentals.",
-  keywords: "artificial intelligence, AI basics, machine learning, AI definition, AI applications",
+  title: "What is Artificial Intelligence? Complete Beginner's Guide to AI Fundamentals | LearnAI",
+  description: "Discover what artificial intelligence is, how it works, its core concepts, real-world applications, and why AI matters. A comprehensive SEO-optimized guide for beginners.",
+  keywords: "artificial intelligence, AI basics, what is AI, machine learning, AI definition, AI applications, AI fundamentals, AI for beginners",
+  authors: [{ name: "LearnAI Team" }],
   openGraph: {
-    title: "What is AI? Comprehensive Beginner's Guide",
-    description: "Understand AI from the basics: definition, capabilities, and real-world applications.",
+    title: "What is Artificial Intelligence? Complete Beginner's Guide",
+    description: "Learn AI fundamentals: definition, capabilities, real-world applications, and why it's transforming industries.",
     type: "article",
   },
 };
 
 const content = `
   <section style="margin-bottom: 24px;">
-    <p style="font-size: 1.05rem; color: #4b5563; line-height: 1.7;">
-      人工智能（AI）不是某一种神秘的“机器思维”，而是让机器通过数据和规则完成感知、判断、学习与决策的技术体系。
-    </p>
+    <p style="font-size: 1.05rem; color: #4b5563; line-height: 1.8;">Artificial Intelligence (AI) is not some mysterious "machine thinking," but rather a comprehensive system of technologies that enables machines to perceive, reason, learn, and make decisions through data and rules.</p>
   </section>
 
   <section style="margin-bottom: 28px;">
-    <h2 style="font-size: 1.45rem; margin-bottom: 10px; color: #111827;">1. AI 的核心定义</h2>
+    <h2 style="font-size: 1.45rem; margin-bottom: 10px; color: #111827;">Core Definition of AI</h2>
+    <p style="color: #374151; line-height: 1.8;">AI focuses on enabling machines to complete complex tasks without explicit programming. Examples include image recognition, natural language understanding, content recommendation, and robotic control.</p>
+    <ul style="color: #374151; line-height: 1.8; padding-left: 20px;">
+      <li><strong>Perception</strong> – Recognizing images, speech, and text</li>
+      <li><strong>Understanding</strong> – Converting input into actionable information</li>
+      <li><strong>Reasoning</strong> – Making logical decisions based on patterns</li>
+      <li><strong>Action</strong> – Generating outputs and executing tasks</li>
+    </ul>
+  </section>
+
+  <section style="margin-bottom: 28px;">
+    <h2 style="font-size: 1.45rem; margin-bottom: 10px; color: #111827;">Why AI Matters</h2>
+    <p style="color: #374151; line-height: 1.8;">In the past, software needed manual coding of every rule. Today, AI systems learn from massive datasets, enabling faster, more accurate solutions across countless scenarios.</p>
+    <div style="background: #f3f4f6; border-left: 4px solid #2563eb; padding: 16px 18px; border-radius: 8px; margin-top: 10px; color: #1f2937;">
+      <strong>Real-World Examples:</strong>
+      <ul style="padding-left: 20px; margin-top: 8px;">
+        <li>E-commerce platforms recommend products based on browsing history</li>
+        <li>Email systems automatically identify and filter spam</li>
+        <li>Navigation apps predict efficient routes in real-time</li>
+        <li>Healthcare systems diagnose diseases from medical images</li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="margin-bottom: 28px;">
+    <h2 style="font-size: 1.45rem; margin-bottom: 10px; color: #111827;">AI is Not a Single Technology</h2>
+    <p style="color: #374151; line-height: 1.8;">AI encompasses multiple specialized subfields like Machine Learning, Deep Learning, Natural Language Processing, Computer Vision, and Reinforcement Learning.</p>
+  </section>
+
+  <section style="margin-bottom: 28px;">
+    <h2 style="font-size: 1.45rem; margin-bottom: 10px; color: #111827;">How to Think About AI</h2>
+    <p style="color: #374151; line-height: 1.8;"><strong>AI doesn't think like humans; it finds patterns in data and applies those patterns to new situations.</strong></p>
+  </section>
+
+  <section style="margin-top: 30px; padding: 18px 20px; background: linear-gradient(180deg, #eff6ff, #dbeafe); border-radius: 12px; border: 1px solid #bfdbfe;">
+    <h2 style="font-size: 1.2rem; margin-bottom: 10px; color: #1e3a8a;">Key Takeaways</h2>
+    <p style="color: #1e3a8a; line-height: 1.8; margin: 0;">AI is a comprehensive system enabling machines to learn, reason, and act. It's pattern recognition at scale. These fundamentals prepare you for exploring LLMs and building AI applications.</p>
+  </section>
+
+  <section style="margin-top: 24px;">
+    <a href="/learn/beginner/what-is-llm" style="display: inline-block; background: #2563eb; color: #fff; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: 700;">Next: What is LLM? →</a>
+  </section>
+`;
     <p style="color: #374151; line-height: 1.7;">
       AI 关注的是：机器如何在没有被明确逐条写死的情况下，完成复杂任务。比如识别图像、理解语言、推荐内容、控制机器人。
     </p>
