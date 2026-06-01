@@ -42,8 +42,8 @@ export default function BeginnerPage() {
           />
 
           <CourseCard
-            title="大模型的认知 (LLM Cognition)"
-            desc="深入理解大语言模型的发展、原理和应用前景。"
+            title="Understanding Large Language Models (LLM Cognition)"
+            desc="Learn what Large Language Models are, how they work, their evolution, and real-world applications."
             link="/learn/beginner/llm-cognition"
           />
 

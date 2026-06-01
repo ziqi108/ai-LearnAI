@@ -1,177 +1,210 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "What is LLM? Large Language Models Explained for Beginners",
-  description: "Understand Large Language Models (LLM): what they are, how they work, and their real-world applications in AI. A comprehensive beginner's guide.",
-  keywords: "LLM, large language model, ChatGPT, language AI, natural language processing",
-  openGraph: {
-    title: "What is LLM? Complete Beginner's Guide to Large Language Models",
-    description: "Learn how LLMs work, why they're powerful, and how they're applied in real products.",
-    type: "article",
-  },
+  title: "What is a Large Language Model (LLM)? Beginner Guide 2026",
+  description:
+    "Learn what LLMs are, how they work, and why they power AI tools like ChatGPT. A clear beginner-friendly guide.",
 };
 
-const content = `
-  <section style="margin-bottom: 24px;">
-    <p style="font-size: 1.05rem; color: #4b5563; line-height: 1.7;">
-      LLM（Large Language Model）是大语言模型，它擅长理解和生成自然语言。你可以把它看成一个“语言能力非常强”的智能系统。
-    </p>
-  </section>
-
-  <section style="margin-bottom: 28px;">
-    <h2 style="font-size: 1.45rem; margin-bottom: 10px; color: #111827;">1. LLM 是什么</h2>
-    <p style="color: #374151; line-height: 1.7;">
-      它通过大量文本数据学习语言规律，能够完成写作、总结、翻译、问答、改写等任务。
-    </p>
-    <ul style="color: #374151; line-height: 1.7; padding-left: 20px;">
-      <li>理解用户问题</li>
-      <li>生成符合上下文的文本</li>
-      <li>依据提示词调整风格与格式</li>
-    </ul>
-  </section>
-
-  <section style="margin-bottom: 28px;">
-    <h2 style="font-size: 1.45rem; margin-bottom: 10px; color: #111827;">2. 为什么它那么强</h2>
-    <p style="color: #374151; line-height: 1.7;">
-      之所以强，是因为模型在海量文本上学习到了词汇、语法、逻辑、表达方式和上下文关系。
-    </p>
-    <div style="background: #f3f4f6; border-left: 4px solid #2563eb; padding: 16px 18px; border-radius: 8px; margin-top: 10px; color: #1f2937; line-height: 1.7;">
-      <strong>直观理解：</strong>如果把语言比作工具，LLM 就是在海量材料里练成“通用语言高手”的模型。
-    </div>
-  </section>
-
-  <section style="margin-bottom: 28px;">
-    <h2 style="font-size: 1.45rem; margin-bottom: 10px; color: #111827;">3. 真实应用</h2>
-    <p style="color: #374151; line-height: 1.7;">
-      代码生成、内容写作、客服问答、翻译工具、学习助手、数据总结，这些都是 LLM 的典型应用。
-    </p>
-  </section>
-
-  <section style="margin-bottom: 28px;">
-    <h2 style="font-size: 1.45rem; margin-bottom: 10px; color: #111827;">4. 学习下一步</h2>
-    <p style="color: #374151; line-height: 1.7;">
-      了解 AI 與 LLM 的关系后，下一步会进入“如何让模型更好地回答问题”的思维方式，也就是 Prompt 的核心。
-    </p>
-  </section>
-
-  <section style="margin-top: 30px; padding: 18px 20px; background: linear-gradient(180deg, #eff6ff, #dbeafe); border-radius: 12px; border: 1px solid #bfdbfe;">
-    <h2 style="font-size: 1.2rem; margin-bottom: 10px; color: #1e3a8a;">课程总结</h2>
-    <p style="color: #1e3a8a; line-height: 1.7; margin: 0;">
-      LLM 是大语言模型，擅长“理解和生成语言”，是当下 AI 产品中最常见的核心能力之一。
-    </p>
-  </section>
-
-  <section style="margin-top: 24px;">
-    <a href="/learn/beginner/how-chatgpt-works" style="display: inline-block; background: #2563eb; color: #fff; text-decoration: none; padding: 10px 16px; border-radius: 8px; font-weight: 700;">Next Lesson: How ChatGPT Works →</a>
-  </section>
-`;
-
-export default function WhatIsLlmLessonPage() {
+export default function WhatIsLLMPage() {
   return (
-    <main style={{
-      padding: "20px",
-      background: "#f8fafc",
-      minHeight: "100vh"
-    }}>
-      {/* 面包屑导航 */}
-      <nav style={{
-        maxWidth: "900px",
-        margin: "0 auto 20px",
-        fontSize: "14px",
-        color: "#666"
-      }} aria-label="breadcrumb">
-        <Link href="/learn" style={{ color: "#2563eb", textDecoration: "none" }}>Learn</Link>
-        {" > "}
-        <Link href="/learn/beginner" style={{ color: "#2563eb", textDecoration: "none" }}>Beginner</Link>
-        {" > What is LLM?"}
-      </nav>
-
-      <article style={{
-        maxWidth: "900px",
-        margin: "auto",
-        background: "#fff",
-        padding: "40px 50px",
-        borderRadius: "16px",
-        boxShadow: "0 10px 30px rgba(0,0,0,0.08)"
-      }}>
-        <Link href="/learn/beginner" style={{
-          display: "inline-block",
-          marginBottom: "20px",
-          color: "#2563eb",
-          textDecoration: "none",
-          fontWeight: "500",
-          fontSize: "14px"
-        }}>
-          ← Back to Beginner Track
-        </Link>
-
-        <div style={{
-          borderRadius: "8px",
-          padding: "8px 12px",
-          background: "#fef3c7",
-          color: "#92400e",
-          display: "inline-block",
-          fontSize: "12px",
-          fontWeight: "600",
-          marginBottom: "20px",
-          marginLeft: "0"
-        }}>
-          Beginner Lesson 02 · 7 min read
-        </div>
-
-        <h1 style={{ 
-          fontSize: "2.8rem", 
-          margin: "24px 0 20px 0", 
-          color: "#111827",
-          lineHeight: "1.2",
-          fontWeight: "800"
-        }}>
-          What is LLM?
+    <main style={{ background: "#f9fafb", minHeight: "100vh" }}>
+      
+      {/* Hero */}
+      <section style={{ padding: "60px 20px", textAlign: "center" }}>
+        <h1 style={{ fontSize: "36px", fontWeight: "700" }}>
+          What is a Large Language Model?
         </h1>
 
-        <p style={{
-          color: "#4b5563",
-          lineHeight: "1.8",
-          marginBottom: "32px",
-          fontSize: "1.1rem",
-          borderLeft: "4px solid #2563eb",
-          paddingLeft: "20px"
-        }}>
-          这一节带你理解大语言模型为什么能写字、解释概念、回答问题。
+        <p style={{ color: "#666", marginTop: "15px", fontSize: "18px" }}>
+          Understand how LLMs power tools like ChatGPT.
         </p>
 
-        <div
-          style={{
-            color: "#1f2937",
-            lineHeight: "1.8",
-            fontSize: "16px"
-          }}
-          dangerouslySetInnerHTML={{ __html: content }}
+        <div style={{ marginTop: "15px" }}>
+          <span style={badge}>Beginner</span>
+          <span style={badge}>Lesson 2</span>
+          <span style={badge}>7 min read</span>
+        </div>
+      </section>
+
+      <article style={container}>
+        
+        {/* Breadcrumb */}
+        <div style={{ fontSize: "14px", marginBottom: "20px" }}>
+          <Link href="/learn">Learn</Link> &gt;{" "}
+          <Link href="/learn/beginner">Beginner</Link> &gt; LLM
+        </div>
+
+        {/* Back */}
+        <Link href="/learn/beginner" style={backBtn}>
+          ← Back to Course
+        </Link>
+
+        {/* Intro */}
+        <Section
+          title="What is an LLM?"
+          text="A Large Language Model (LLM) is an AI system trained on massive amounts of text data to understand and generate human language."
+          list={[
+            "Understands user input",
+            "Generates contextual responses",
+            "Adapts tone and format based on prompts",
+          ]}
         />
 
-        {/* 底部导航 */}
-        <div style={{
-          marginTop: "48px",
-          paddingTop: "32px",
-          borderTop: "1px solid #e5e7eb"
-        }}>
-          <p style={{ fontSize: "14px", color: "#666", marginBottom: "12px" }}>Next Lesson</p>
-          <Link href="/learn/beginner/how-chatgpt-works" style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "8px",
-            background: "#2563eb",
-            color: "#fff",
-            textDecoration: "none",
-            padding: "12px 20px",
-            borderRadius: "8px",
-            fontWeight: "600",
-            transition: "background 0.2s"
-          }}>
-            How ChatGPT Works? →
+        <Highlight>
+          Think of an LLM as a highly trained “language intelligence system.”
+        </Highlight>
+
+        {/* Why powerful */}
+        <Section
+          title="Why LLMs Are So Powerful"
+          text="LLMs learn from billions of words and sentences, giving them strong language abilities."
+          list={[
+            "Grammar and structure understanding",
+            "Context awareness",
+            "Logical relationships between ideas",
+            "Flexible expression styles",
+          ]}
+        />
+
+        <Card title="Simple Analogy">
+          If language is a tool, an LLM is a master who has practiced using that tool across billions of examples.
+        </Card>
+
+        {/* Applications */}
+        <Section
+          title="Real-World Applications"
+          list={[
+            "Content writing",
+            "Code generation",
+            "Customer support AI",
+            "Translation tools",
+            "Learning assistants",
+            "Summarization systems",
+          ]}
+        />
+
+        {/* Next step */}
+        <Section
+          title="What You Should Learn Next"
+          text="Understanding LLMs is only the beginning. The next step is learning how to interact with them effectively."
+          list={[
+            "Prompt design",
+            "Clear task instructions",
+            "Structured outputs",
+          ]}
+        />
+
+        {/* Summary */}
+        <div style={summary}>
+          <strong>Key Takeaway:</strong> LLMs are AI systems designed to
+          understand and generate language. They are the core technology behind
+          modern AI tools like ChatGPT.
+        </div>
+
+        {/* CTA */}
+        <div style={cta}>
+          <h3>Next Lesson</h3>
+
+          <Link href="/learn/beginner/how-chatgpt-works">
+            <button style={btn}>How ChatGPT Works →</button>
           </Link>
         </div>
+
       </article>
     </main>
-  );;
+  );
 }
+
+/* ===== 组件 ===== */
+
+function Section({ title, text, list = [] }: any) {
+  return (
+    <div style={{ marginTop: "30px" }}>
+      <h2>{title}</h2>
+      {text && <p style={{ color: "#555" }}>{text}</p>}
+      {list.length > 0 && (
+        <ul>
+          {list.map((item: string, i: number) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
+function Card({ title, children }: any) {
+  return (
+    <div style={card}>
+      <strong>{title}</strong>
+      <p style={{ color: "#666" }}>{children}</p>
+    </div>
+  );
+}
+
+function Highlight({ children }: any) {
+  return (
+    <div style={highlight}>
+      {children}
+    </div>
+  );
+}
+
+/* ===== 样式 ===== */
+
+const container = {
+  maxWidth: "800px",
+  margin: "auto",
+  background: "#fff",
+  padding: "40px",
+  borderRadius: "16px",
+  boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+};
+
+const highlight = {
+  marginTop: "20px",
+  padding: "15px",
+  background: "#e0f2fe",
+  borderRadius: "10px",
+};
+
+const card = {
+  background: "#f3f4f6",
+  padding: "20px",
+  borderRadius: "10px",
+  marginTop: "20px",
+};
+
+const summary = {
+  marginTop: "40px",
+  padding: "15px",
+  background: "#dbeafe",
+  borderRadius: "10px",
+};
+
+const cta = {
+  textAlign: "center" as const,
+  marginTop: "50px",
+};
+
+const btn = {
+  padding: "12px 18px",
+  background: "#2563eb",
+  color: "#fff",
+  border: "none",
+  borderRadius: "8px",
+};
+
+const backBtn = {
+  display: "inline-block",
+  marginBottom: "20px",
+  color: "#2563eb",
+};
+
+const badge = {
+  marginRight: "10px",
+  background: "#dbeafe",
+  padding: "5px 10px",
+  borderRadius: "6px",
+};
