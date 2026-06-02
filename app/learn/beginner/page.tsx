@@ -54,9 +54,15 @@ export default function BeginnerPage() {
           />
 
            <CourseCard
-            title="rompt Engineering Guide 2026✅"
+            title="Prompt Engineering Guide 2026✅"
             desc="Master prompt engineering with techniques, examples, and best practices. Learn how to write better prompts for ChatGPT and AI tools."
             link="/learn/beginner/prompt-engineering-guide"
+          />
+
+          <CourseCard
+            title="Best ChatGPT Prompt Examples (2026 Guide for Beginners)✅"
+            desc="iscover the best ChatGPT prompt examples for beginners. Learn how to write better prompts with real use cases and techniques."
+            link="/learn/beginner/prompt-engineering-examples"
           />         
 
         </div>
