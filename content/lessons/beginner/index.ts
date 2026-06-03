@@ -6,6 +6,7 @@ import { llmCognition } from "./llm-cognition";
 import { promptBasics } from "./prompt-basics";
 import { promptEngineeringGuide } from "./prompt-engineering-guide";
 import { promptBasicsAdvance } from "./prompt-basics-advance";
+import { promptSixElements } from "./prompt-six-elements";
 
 export const beginnerLessons: Lesson[] = [
   whatIsAi,
@@ -15,4 +16,5 @@ export const beginnerLessons: Lesson[] = [
   promptBasics,
   promptEngineeringGuide,
   promptBasicsAdvance,
+  promptSixElements,
 ];

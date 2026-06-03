@@ -31,7 +31,9 @@ const ctaMap = {
 } as const;
 
 export default function Home() {
-  const articles = getAllArticles().slice(0, 4);
+  const articles = getAllArticles()
+  .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+  .slice(0, 4);
 
   return (
     <main className="min-h-screen bg-slate-50">
