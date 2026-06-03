@@ -14,12 +14,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Learn Platform",
-  description: "Learn AI step by step",
-
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://ai-learn-ai-nextjs.vercel.app"
+  ),
+  title: {
+    default: "AI Learn Hub | Learn AI, LLM & Prompt Engineering",
+    template: "%s | AI Learn Hub",
+  },
+  description: "Learn AI step by step with structured lessons and SEO-friendly guides.",
   verification: {
-    google: "DeXQONqyH5_mOWI6uWedRrYXl4SPKo5AWyKf-qb6joc"
-  }
+    google: "DeXQONqyH5_mOWI6uWedRrYXl4SPKo5AWyKf-qb6joc",
+  },
 };
 
 export default function RootLayout({

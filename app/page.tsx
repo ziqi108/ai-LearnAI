@@ -1,268 +1,120 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import type { CSSProperties } from "react";
-import { articles } from "../data/articles";
+import { CourseCard } from "@/components/site/CourseCard";
+import { getAllArticles } from "@/lib/content/articles";
+import { courses } from "@/lib/content/lessons";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "AI Learning Hub | Learn AI, LLM & AGI From Scratch",
-  description: "Master artificial intelligence, large language models, and AGI through comprehensive step-by-step guides, tutorials, and real-world projects.",
-  keywords: "AI learning, LLM tutorial, machine learning, deep learning, prompt engineering, AI projects",
+  description:
+    "Master artificial intelligence, large language models, and AGI through step-by-step guides, tutorials, and real-world projects.",
+  keywords: [
+    "AI learning",
+    "LLM tutorial",
+    "machine learning",
+    "prompt engineering",
+    "AI projects",
+  ],
   openGraph: {
     title: "AI Learning Hub - Learn AI, LLM & AGI",
-    description: "Comprehensive courses and tutorials to master AI and build real-world projects.",
+    description:
+      "Comprehensive courses and tutorials to master AI and build real-world projects.",
     type: "website",
   },
 };
 
+const ctaMap = {
+  beginner: "Start →",
+  intermediate: "Continue →",
+  advanced: "Explore →",
+  projects: "Build →",
+} as const;
+
 export default function Home() {
+  const articles = getAllArticles().slice(0, 4);
+
   return (
-    <main style={{
-      background: "#f5f7fb",
-      minHeight: "100vh"
-    }}>
-
-      {/* HERO区域 */}
-      <section style={{
-        textAlign: "center",
-        padding: "100px 20px 80px",
-        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-        color: "#fff"
-      }}>
-        <h1 style={{ 
-          fontSize: "3rem", 
-          lineHeight: "1.2",
-          fontWeight: "800",
-          marginBottom: "20px"
-        }}>
-          🚀 Learn AI, LLM & AGI From Scratch
-        </h1>
-
-        <p style={{
-          marginTop: "20px",
-          color: "#e0e7ff",
-          fontSize: "1.2rem",
-          maxWidth: "600px",
-          margin: "20px auto 0"
-        }}>
-          Step-by-step guides to master artificial intelligence, large language models, and real-world projects.
-        </p>
-
-        <div style={{ marginTop: "40px" }}>
-          <Link href="/learn">
-            <button style={{
-              padding: "14px 28px",
-              background: "#fff",
-              color: "#667eea",
-              border: "none",
-              borderRadius: "8px",
-              cursor: "pointer",
-              fontSize: "16px",
-              fontWeight: "600",
-              boxShadow: "0 10px 25px rgba(0,0,0,0.2)"
-            }}>
-              Start Learning →
-            </button>
+    <main className="min-h-screen bg-slate-50">
+      <section className="bg-gradient-to-br from-indigo-600 to-violet-700 px-4 py-24 text-center text-white sm:py-28">
+        <div className="mx-auto max-w-3xl">
+          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
+            🚀 Learn AI, LLM & AGI From Scratch
+          </h1>
+          <p className="mt-6 text-lg text-indigo-100 sm:text-xl">
+            Step-by-step guides to master AI, large language models, and
+            real-world projects.
+          </p>
+          <Link
+            href="/learn"
+            className="mt-10 inline-flex rounded-lg bg-white px-6 py-3 text-base font-semibold text-indigo-700 shadow-lg hover:bg-indigo-50 transition-colors"
+          >
+            Start Learning →
           </Link>
         </div>
       </section>
 
-      {/* Learn模块 */}
-      <section style={{
-        maxWidth: "1200px",
-        margin: "0 auto",
-        padding: "60px 20px"
-      }}>
-        <h2 style={{
-          fontSize: "2rem",
-          marginBottom: "40px",
-          color: "#111827"
-        }}>
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
           📘 Learning Paths
         </h2>
-
-        <div style={grid}>
-
-          <Card
-            title="🟢 Beginner"
-            desc="Understand AI basics and concepts"
-            link="/learn/beginner"
-          />
-
-          <Card
-            title="🟡 Intermediate"
-            desc="Learn how models work"
-            link="/learn/intermediate"
-          />
-
-          <Card
-            title="🔴 Advanced"
-            desc="Fine-tune and deploy AI models"
-            link="/learn/advanced"
-          />
-
-          <Card
-            title="🚀 Projects"
-            desc="Build real AI applications"
-            link="/learn/projects"
-          />
-
-        </div>
-      </section>
-
-      {/* 热门文章（SEO入口） */}
-      <section style={{
-        maxWidth: "1200px",
-        margin: "0 auto",
-        padding: "60px 20px",
-        borderTop: "1px solid #e5e7eb"
-      }}>
-        <h2 style={{
-          fontSize: "2rem",
-          marginBottom: "40px",
-          color: "#111827"
-        }}>
-          🔥 Latest Articles
-        </h2>
-
-        <div style={grid}>
-          {articles.slice(0, 4).map(article => (
-            <div key={article.slug} style={cardStyle}>
-              <div>
-                <h3 style={{
-                  fontSize: "1.2rem",
-                  marginBottom: "10px",
-                  color: "#111827"
-                }}>
-                  {article.title}
-                </h3>
-                <p style={{
-                  color: "#666",
-                  lineHeight: "1.6"
-                }}>
-                  {article.description}
-                </p>
-              </div>
-
-              <div style={buttonRow}>
-                <Link href={`/articles/${article.slug}`}>
-                  <button style={btnSmall}>Read Article →</button>
-                </Link>
-              </div>
-            </div>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          {courses.map((course) => (
+            <CourseCard
+              key={course.level}
+              title={course.title}
+              description={course.description}
+              topics={course.topics.slice(0, 4)}
+              href={`/learn/${course.level}`}
+              color={course.color}
+              cta={ctaMap[course.level]}
+            />
           ))}
         </div>
       </section>
 
-      {/* CTA 引导 */}
-      <section style={{
-        textAlign: "center",
-        padding: "80px 20px",
-        background: "#f8fafc",
-        borderTop: "1px solid #e5e7eb"
-      }}>
-        <h2 style={{
-          fontSize: "2rem",
-          marginBottom: "20px",
-          color: "#111827"
-        }}>
-          Ready to Build Your Own AI?
-        </h2>
-
-        <p style={{ 
-          color: "#666",
-          fontSize: "1.1rem",
-          marginBottom: "30px"
-        }}>
-          Start learning today and build real AI projects from scratch.
-        </p>
-
-        <Link href="/learn">
-          <button style={{
-            padding: "14px 28px",
-            background: "#0070f3",
-            color: "#fff",
-            border: "none",
-            borderRadius: "8px",
-            cursor: "pointer",
-            fontSize: "16px",
-            fontWeight: "600"
-          }}>
-            Begin Your Journey →
-          </button>
-        </Link>
+      <section className="border-t border-slate-200 bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
+            🔥 Latest Articles
+          </h2>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            {articles.map((article) => (
+              <article
+                key={article.slug}
+                className="flex flex-col rounded-xl border border-slate-100 bg-slate-50 p-6 shadow-sm"
+              >
+                <h3 className="text-lg font-semibold text-slate-900">
+                  {article.title}
+                </h3>
+                <p className="mt-2 flex-1 text-slate-600">
+                  {article.description}
+                </p>
+                <Link
+                  href={`/articles/${article.slug}`}
+                  className="mt-4 text-sm font-semibold text-blue-600 hover:underline"
+                >
+                  Read Article →
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
 
+      <section className="border-t border-slate-200 bg-slate-100 px-4 py-20 text-center">
+        <h2 className="text-2xl font-bold text-slate-900">
+          Ready to Build Your Own AI?
+        </h2>
+        <p className="mt-3 text-slate-600">
+          Start learning today and build real AI projects from scratch.
+        </p>
+        <Link
+          href="/learn/beginner"
+          className="mt-8 inline-flex rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-700"
+        >
+          Begin Your Journey →
+        </Link>
+      </section>
     </main>
   );
 }
-
-/* 卡片组件 */
-function Card({
-  title,
-  desc,
-  link,
-}: {
-  title: string;
-  desc: string;
-  link: string;
-}) {
-  return (
-    <div style={cardStyle}>
-      <div>
-        <h3>{title}</h3>
-        <p>{desc}</p>
-      </div>
-
-      <div style={buttonRow}>
-        <Link href={link}>
-          <button style={btnSmall}>Go</button>
-        </Link>
-      </div>
-    </div>
-  );
-}
-
-/* 样式 */
-
-const grid = {
-  display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-  gap: "20px",
-  marginTop: "20px"
-};
-
-const cardStyle: CSSProperties = {
-  background: "#fff",
-  padding: "20px",
-  borderRadius: "12px",
-  boxShadow: "0 8px 20px rgba(0,0,0,0.08)",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-between",
-  minHeight: "200px"
-};
-
-const buttonRow: CSSProperties = {
-  marginTop: "20px",
-  display: "flex",
-  alignItems: "center"
-};
-
-const btnPrimary = {
-  padding: "12px 20px",
-  background: "#0070f3",
-  color: "#fff",
-  border: "none",
-  borderRadius: "8px",
-  cursor: "pointer",
-  fontSize: "16px"
-};
-
-const btnSmall = {
-  marginTop: "10px",
-  padding: "6px 12px",
-  background: "#0070f3",
-  color: "#fff",
-  border: "none",
-  borderRadius: "6px",
-  cursor: "pointer"
-};

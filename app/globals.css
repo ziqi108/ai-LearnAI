@@ -22,5 +22,31 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+.article-content h1,
+.article-content h2,
+.article-content h3 {
+  @apply font-bold text-slate-900 mt-8 mb-3;
+}
+
+.article-content h2 {
+  @apply text-2xl;
+}
+
+.article-content p {
+  @apply mb-4 text-slate-700 leading-relaxed;
+}
+
+.article-content ul {
+  @apply list-disc pl-6 mb-4 space-y-2 text-slate-700;
+}
+
+.article-content a {
+  @apply text-blue-600 hover:underline;
+}
+
+.article-content hr {
+  @apply my-8 border-slate-200;
 }

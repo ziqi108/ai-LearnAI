@@ -1,22 +1,35 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
+import { getAllArticles } from "@/lib/content/articles";
+import { getAllLessons, courses } from "@/lib/content/lessons";
+
+const baseUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://ai-learn-ai-nextjs.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://ai-learn-ai-nextjs.vercel.app";
+  const staticPaths = ["", "/learn"];
+  const coursePaths = courses.map((c) => `/learn/${c.level}`);
+  const lessonPaths = getAllLessons().map(
+    (l) => `/learn/${l.level}/${l.slug}`
+  );
+  const articlePaths = getAllArticles().map((a) => `/articles/${a.slug}`);
+  const categoryPaths = [...new Set(getAllArticles().map((a) => a.category))].map(
+    (c) => `/category/${c}`
+  );
 
-  const pages = [
-    "",
-    "/learn",
-    "/learn/beginner",
-    "/learn/beginner/what-is-ai",
-    "/learn/beginner/what-is-llm",
-    "/learn/beginner/how-chatgpt-works",
-    "/learn/beginner/prompt-basics",
-    "/learn/prompt-engineering-guide",
-    "/learn/prompt-engineering-examples",
+  const paths = [
+    ...staticPaths,
+    ...coursePaths,
+    ...lessonPaths,
+    ...articlePaths,
+    ...categoryPaths,
   ];
 
-  return pages.map((path) => ({
+  return paths.map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: new Date(),
+    changeFrequency: path.includes("/learn/") && path.split("/").length > 3
+      ? "monthly"
+      : "weekly",
+    priority: path === "" ? 1 : path === "/learn" ? 0.9 : 0.8,
   }));
 }

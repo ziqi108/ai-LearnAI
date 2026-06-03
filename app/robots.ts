@@ -1,11 +1,11 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
+
+const baseUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://ai-learn-ai-nextjs.vercel.app";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-    },
-    sitemap: "https://ai-learn-ai-nextjs.vercel.app",
+    rules: { userAgent: "*", allow: "/" },
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }
