@@ -30,6 +30,20 @@ export function articleJsonLd(article: Article) {
     datePublished: article.publishedAt,
     inLanguage: "en",
     isAccessibleForFree: true,
+    author: {
+      "@type": "Organization",
+      name: "AI Learn Hub",
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "AI Learn Hub",
+      url: SITE_URL,
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/articles/${article.slug}`,
+    },
   };
 }
 

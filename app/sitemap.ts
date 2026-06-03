@@ -24,12 +24,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...categoryPaths,
   ];
 
-  return paths.map((path) => ({
-    url: `${baseUrl}${path}`,
-    lastModified: new Date(),
-    changeFrequency: path.includes("/learn/") && path.split("/").length > 3
-      ? "monthly"
-      : "weekly",
-    priority: path === "" ? 1 : path === "/learn" ? 0.9 : 0.8,
-  }));
+  return paths.map((path) => {
+    let priority = 0.8;
+    let changeFrequency: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never" = "weekly";
+
+    if (path === "") {
+      priority = 1.0;
+      changeFrequency = "weekly";
+    } else if (path === "/learn") {
+      priority = 0.9;
+      changeFrequency = "weekly";
+    } else if (path.startsWith("/learn/") && path.split("/").length === 3) {
+      priority = 0.85;
+      changeFrequency = "weekly";
+    } else if (path.startsWith("/learn/") && path.split("/").length > 3) {
+      priority = 0.8;
+      changeFrequency = "monthly";
+    } else if (path.startsWith("/articles/")) {
+      priority = 0.75;
+      changeFrequency = "monthly";
+    } else if (path.startsWith("/category/")) {
+      priority = 0.7;
+      changeFrequency = "weekly";
+    }
+
+    return {
+      url: `${baseUrl}${path}`,
+      lastModified: new Date(),
+      changeFrequency,
+      priority,
+    };
+  });
 }
