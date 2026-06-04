@@ -1,11 +1,14 @@
 import type { Course, CourseLevel, Lesson } from "./types";
 import { beginnerLessons } from "../../content/lessons/beginner";
+import { intermediateLessons } from "../../content/lessons/intermediate";
+import { advancedLessons } from "../../content/lessons/advanced";
+import { projectLessons } from "../../content/lessons/projects";
 
 const lessonsByLevel: Record<CourseLevel, Lesson[]> = {
   beginner: beginnerLessons,
-  intermediate: [],
-  advanced: [],
-  projects: [],
+  intermediate: intermediateLessons,
+  advanced: advancedLessons,
+  projects: projectLessons,
 };
 
 export function getAllLessons(): Lesson[] {
