@@ -4,9 +4,10 @@ import { whatIsLlm } from "./what-is-llm";
 import { howChatgptWorks } from "./how-chatgpt-works";
 import { llmCognition } from "./llm-cognition";
 import { promptBasics } from "./prompt-basics";
-import { promptEngineeringGuide } from "./prompt-engineering-guide";
+
 import { promptBasicsAdvance } from "./prompt-basics-advance";
 import { promptSixElements } from "./prompt-six-elements";
+import { promptEngineeringComplete } from "./prompt-engineering-complete";
 
 export const beginnerLessons: Lesson[] = [
   whatIsAi,
@@ -14,7 +15,8 @@ export const beginnerLessons: Lesson[] = [
   howChatgptWorks,
   llmCognition,
   promptBasics,
-  promptEngineeringGuide,
+  
   promptBasicsAdvance,
   promptSixElements,
+  promptEngineeringComplete,
 ];
