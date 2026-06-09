@@ -20,6 +20,10 @@ export const promptEngineeringComplete: Lesson = {
   readMinutes: 12,
   publishedAt: "2026-06-04",
   breadcrumbLabel: "Prompt Engineering",
+  nextLesson: {
+    slug: "how-chatgpt-claude-gemini-work",
+    label: "How ChatGPT, Claude, and Gemini Work →",
+  },
 
   sections: [
     {
