@@ -1,4 +1,4 @@
-import type { Lesson } from "../../lib/content/types";
+import type { Lesson } from "../../../lib/content/types";
 
 export const promptEngineeringComplete: Lesson = {
   slug: "prompt-engineering-complete",
