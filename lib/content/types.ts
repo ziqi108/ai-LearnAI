@@ -1,4 +1,8 @@
-export type CourseLevel = "beginner" | "intermediate" | "advanced" | "projects";
+export type CourseLevel =
+  | "beginner"
+  | "intermediate"
+  | "advanced"
+  | "projects";
 
 export type LessonSection =
   | { type: "heading"; level?: 2 | 3; text: string }
@@ -7,7 +11,12 @@ export type LessonSection =
   | { type: "highlight"; text: string }
   | { type: "card"; title: string; text?: string; items?: string[] }
   | { type: "summary"; text: string }
-  | { type: "html"; html: string };
+  | { type: "html"; html: string }
+  | {
+      type: "code";
+      code: string;
+      language?: "ts" | "js" | "python" | "json" | "bash" | "text";
+    };
 
 export type Lesson = {
   slug: string;
