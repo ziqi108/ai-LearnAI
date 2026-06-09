@@ -8,6 +8,7 @@ import { promptBasicsAdvance } from "./prompt-basics-advance";
 import { promptSixElements } from "./prompt-six-elements";
 import { promptEngineeringComplete } from "./prompt-engineering-complete";
 import { howChatgptClaudeGeminiWork } from "./how-chatgpt-claude-gemini-work";
+import { promptTemplatePractical } from "./prompt-template-practical";
 
 export const beginnerLessons: Lesson[] = [
   whatIsAi,
@@ -19,4 +20,5 @@ export const beginnerLessons: Lesson[] = [
   promptSixElements,
   promptEngineeringComplete,
   howChatgptClaudeGeminiWork,
+  promptTemplatePractical,
 ];
