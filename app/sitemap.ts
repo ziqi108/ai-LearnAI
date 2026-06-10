@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { getAllArticles } from "@/lib/content/articles";
 import { getAllLessons, courses } from "@/lib/content/lessons";
 
+export const dynamic = "force-static";
+
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://ai-learn-ai-nextjs.vercel.app";
 
