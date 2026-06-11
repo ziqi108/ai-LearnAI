@@ -24,42 +24,60 @@ export const metadata: Metadata = {
 };
 
 const ctaMap = {
-  beginner: "Start →",
-  intermediate: "Continue →",
-  advanced: "Explore →",
-  projects: "Build →",
+  beginner: "Start Learning",
+  intermediate: "Continue",
+  advanced: "Explore",
+  projects: "Start Building",
 } as const;
 
 export default function Home() {
   const articles = getAllArticles()
-  .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-  .slice(0, 4);
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    .slice(0, 4);
 
   return (
     <main className="min-h-screen bg-slate-50">
-      <section className="bg-gradient-to-br from-indigo-600 to-violet-700 px-4 py-24 text-center text-white sm:py-28">
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800 px-4 py-24 text-center text-white sm:py-32">
         <div className="mx-auto max-w-3xl">
-          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
-            🚀 Learn AI, LLM & AGI From Scratch
+          <span className="inline-block rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-wide text-indigo-100 ring-1 ring-white/20 mb-6">
+            Free AI Courses
+          </span>
+          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+            Learn AI, LLM &amp; AGI
+            <br />
+            <span className="text-indigo-200">From Scratch</span>
           </h1>
-          <p className="mt-6 text-lg text-indigo-100 sm:text-xl">
+          <p className="mt-6 text-lg text-indigo-100 sm:text-xl max-w-2xl mx-auto leading-relaxed">
             Step-by-step guides to master AI, large language models, and
-            real-world projects.
+            real-world projects — no experience required.
           </p>
-          <Link
-            href="/learn"
-            className="mt-10 inline-flex rounded-lg bg-white px-6 py-3 text-base font-semibold text-indigo-700 shadow-lg hover:bg-indigo-50 transition-colors"
-          >
-            Start Learning →
-          </Link>
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="/learn"
+              className="rounded-lg bg-white px-6 py-3 text-base font-semibold text-indigo-700 shadow-lg hover:bg-indigo-50 transition-all duration-150 active:scale-95"
+            >
+              Start Learning →
+            </Link>
+            <Link
+              href="/learn/beginner"
+              className="rounded-lg bg-white/10 px-6 py-3 text-base font-semibold text-white ring-1 ring-white/25 hover:bg-white/20 transition-all duration-150"
+            >
+              Beginner Guide
+            </Link>
+          </div>
         </div>
       </section>
 
+      {/* Learning Paths */}
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
-          📘 Learning Paths
-        </h2>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
+            Learning Paths
+          </h2>
+          <p className="mt-2 text-slate-500 text-sm">Choose your level and start learning today.</p>
+        </div>
+        <div className="grid gap-5 sm:grid-cols-2">
           {courses.map((course) => (
             <CourseCard
               key={course.level}
@@ -74,26 +92,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Latest Articles */}
       <section className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
-            🔥 Latest Articles
-          </h2>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
+              Latest Articles
+            </h2>
+            <p className="mt-2 text-slate-500 text-sm">Insights and guides from our team.</p>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2">
             {articles.map((article) => (
               <article
                 key={article.slug}
-                className="flex flex-col rounded-xl border border-slate-100 bg-slate-50 p-6 shadow-sm"
+                className="group flex flex-col rounded-2xl border border-slate-100 bg-slate-50 p-6 shadow-sm ring-1 ring-slate-100 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
               >
-                <h3 className="text-lg font-semibold text-slate-900">
+                <h3 className="text-base font-semibold text-slate-900 leading-snug group-hover:text-indigo-600 transition-colors">
                   {article.title}
                 </h3>
-                <p className="mt-2 flex-1 text-slate-600">
+                <p className="mt-2 flex-1 text-sm text-slate-500 leading-relaxed">
                   {article.description}
                 </p>
                 <Link
                   href={`/articles/${article.slug}`}
-                  className="mt-4 text-sm font-semibold text-blue-600 hover:underline"
+                  className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 hover:text-indigo-700 transition-colors"
                 >
                   Read Article →
                 </Link>
@@ -103,19 +125,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-slate-200 bg-slate-100 px-4 py-20 text-center">
-        <h2 className="text-2xl font-bold text-slate-900">
-          Ready to Build Your Own AI?
-        </h2>
-        <p className="mt-3 text-slate-600">
-          Start learning today and build real AI projects from scratch.
-        </p>
-        <Link
-          href="/learn/beginner"
-          className="mt-8 inline-flex rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-700"
-        >
-          Begin Your Journey →
-        </Link>
+      {/* CTA */}
+      <section className="border-t border-slate-200 bg-gradient-to-br from-slate-900 to-indigo-950 px-4 py-20 text-center">
+        <div className="mx-auto max-w-xl">
+          <h2 className="text-2xl font-bold text-white sm:text-3xl">
+            Ready to Build Your Own AI?
+          </h2>
+          <p className="mt-3 text-slate-400 leading-relaxed">
+            Start learning today and build real AI projects from scratch.
+          </p>
+          <Link
+            href="/learn/beginner"
+            className="mt-8 inline-flex rounded-lg bg-indigo-600 px-6 py-3 font-semibold text-white shadow-lg hover:bg-indigo-500 transition-all duration-150 active:scale-95"
+          >
+            Begin Your Journey →
+          </Link>
+        </div>
       </section>
     </main>
   );
