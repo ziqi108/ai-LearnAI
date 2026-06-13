@@ -1,0 +1,84 @@
+[33mc5a4bd6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Initial commit
+[33mc2d325e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m  UI: unify button styles improve typography and layout consistency
+[33m45cd880[m  Refactor: auto-scan course system with dynamic lesson loading
+[33md6bee5f[m  Fix: use webpack for local dev to support nested dynamic routes
+[33m5646464[m  Revert to standard Next.js config for Vercel deployment
+[33m5297ed1[m Configure static export for Cloudflare Pages
+[33meb0973c[m Fix lesson import paths for Vercel build
+[33m40d989e[m Prompt Template Practical Guide
+[33m971fb3d[m Fix lesson publishing errors
+[33m5b3ae55[m Add beginner lesson on how AI models work
+[33mc9fe57a[m code
+[33m4fd3b0e[m add lesson class
+[33mfbfabf2[m add lession
+[33me4b699c[m Fix import path in prompt-six-elements lesson
+[33m66c238e[m trigger vercel deployment
+[33m4a073c4[m add aticle
+[33m17a7555[m Improve SEO: add structured data, enhanced metadata, and sitemap priorities
+[33mfb07ab2[m Add prompt engineering article, MDX dependencies, and refactor content architecture
+[33m71d3165[m add an article
+[33mf886bc2[m fix an article
+[33m282f762[m add an article
+[33mfdf0ecb[m Prompt Engineering Guide
+[33m9f9aa74[m fix UI
+[33mee3e635[m feat: convert learning articles to English with SEO optimization (part 1)
+[33mb0c22f1[m feat: convert prompt-basics to Chinese and match llm-cognition format
+[33me10fff9[m feat: add SEO metadata and improve layout typography
+[33m9420ebd[m fix: normalize all route paths to lowercase /learn
+[33mdaf09c2[m Add files via upload
+[33m18c60d6[m Delete app/Learn directory
+[33mc76621a[m fix routing + add prompt lesson
+[33m45b89b3[m add prompt course
+[33m2add47c[m add prompt basics lesson
+[33mdfa9e43[m fix google verification
+[33m01ea98d[m add google verification
+[33mc9b13be[m add google verification
+[33m7b57707[m Delete google5014ded934957857.html
+[33mad1e657[m Add files via upload
+[33m73613da[m Add LLM cognition course to course navigation (#3)
+[33m4dd9116[m feat: Add comprehensive LLM cognition teaching material (#2)
+[33m15c9653[m Fix Vercel build errors: add empty page files and fix Card component types
+[33mb43e285[m initial commit
+[33m5656585[m Initial commit from Create Next App
+[33mc5a4bd6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Initial commit
+[33mc2d325e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m  UI: unify button styles improve typography and layout consistency
+[33m45cd880[m  Refactor: auto-scan course system with dynamic lesson loading
+[33md6bee5f[m  Fix: use webpack for local dev to support nested dynamic routes
+[33m5646464[m  Revert to standard Next.js config for Vercel deployment
+[33m5297ed1[m Configure static export for Cloudflare Pages
+[33meb0973c[m Fix lesson import paths for Vercel build
+[33m40d989e[m Prompt Template Practical Guide
+[33m971fb3d[m Fix lesson publishing errors
+[33m5b3ae55[m Add beginner lesson on how AI models work
+[33mc9fe57a[m code
+[33m4fd3b0e[m add lesson class
+[33mfbfabf2[m add lession
+[33me4b699c[m Fix import path in prompt-six-elements lesson
+[33m66c238e[m trigger vercel deployment
+[33m4a073c4[m add aticle
+[33m17a7555[m Improve SEO: add structured data, enhanced metadata, and sitemap priorities
+[33mfb07ab2[m Add prompt engineering article, MDX dependencies, and refactor content architecture
+[33m71d3165[m add an article
+[33mf886bc2[m fix an article
+[33m282f762[m add an article
+[33mfdf0ecb[m Prompt Engineering Guide
+[33m9f9aa74[m fix UI
+[33mee3e635[m feat: convert learning articles to English with SEO optimization (part 1)
+[33mb0c22f1[m feat: convert prompt-basics to Chinese and match llm-cognition format
+[33me10fff9[m feat: add SEO metadata and improve layout typography
+[33m9420ebd[m fix: normalize all route paths to lowercase /learn
+[33mdaf09c2[m Add files via upload
+[33m18c60d6[m Delete app/Learn directory
+[33mc76621a[m fix routing + add prompt lesson
+[33m45b89b3[m add prompt course
+[33m2add47c[m add prompt basics lesson
+[33mdfa9e43[m fix google verification
+[33m01ea98d[m add google verification
+[33mc9b13be[m add google verification
+[33m7b57707[m Delete google5014ded934957857.html
+[33mad1e657[m Add files via upload
+[33m73613da[m Add LLM cognition course to course navigation (#3)
+[33m4dd9116[m feat: Add comprehensive LLM cognition teaching material (#2)
+[33m15c9653[m Fix Vercel build errors: add empty page files and fix Card component types
+[33mb43e285[m initial commit
+[33m5656585[m Initial commit from Create Next App
