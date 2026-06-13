@@ -1,101 +1,86 @@
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { LessonListCard } from "@/components/site/LessonListCard";
-import { PageShell } from "@/components/site/PageShell";
+import Link from "next/link";
 import { courses, getCourse, getLessonsByLevel } from "@/lib/content/lessons";
 import type { CourseLevel } from "@/lib/content/types";
-import { breadcrumbJsonLd, courseJsonLd } from "@/lib/seo/json-ld";
-
-const LEVELS = courses.map((c) => c.level);
 
 type Props = { params: Promise<{ level: string }> };
-
-export async function generateStaticParams() {
-  return LEVELS.map((level) => ({ level }));
-}
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { level } = await params;
-  const course = getCourse(level as CourseLevel);
-  if (!course) return { title: "Course Not Found" };
-
-  return {
-    title: `${course.title} AI Course | AI Learn Hub`,
-    description: course.description,
-    openGraph: {
-      title: `${course.title} — AI Learn Hub`,
-      description: course.description,
-      type: "website",
-    },
-  };
-}
 
 export default async function CourseLevelPage({ params }: Props) {
   const { level } = await params;
   const course = getCourse(level as CourseLevel);
-  if (!course) notFound();
+  if (!course) {
+    notFound();
+    return null;
+  }
 
-  const lessons = getLessonsByLevel(course.level);
-  const emoji =
-    course.level === "beginner"
-      ? "🟢"
-      : course.level === "intermediate"
-        ? "🟡"
-        : course.level === "advanced"
-          ? "🔴"
-          : "🚀";
-
-  const jsonLd = [
-    courseJsonLd({
-      title: course.title,
-      description: course.description,
-      level: course.level,
-    }),
-    breadcrumbJsonLd([
-      { name: "Home", path: "/" },
-      { name: "Learn", path: "/learn" },
-      { name: course.title, path: `/learn/${course.level}` },
-    ]),
-  ];
+  const lessons = getLessonsByLevel(course.level as CourseLevel);
 
   return (
-    <PageShell>
-      {jsonLd.map((item, i) => (
-        <script
-          key={i}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }}
-        />
-      ))}
-      <header className="mb-10 text-center max-w-2xl mx-auto">
-        <h1 className="text-3xl font-extrabold text-slate-900 sm:text-4xl">
-          {emoji} {course.title} AI Course
-        </h1>
-        <p className="mt-4 text-lg text-slate-600">{course.description}</p>
-      </header>
-
-      {lessons.length > 0 ? (
-        <div className="mx-auto max-w-2xl space-y-5">
-          {lessons.map((lesson) => (
-            <LessonListCard
-              key={lesson.slug}
-              title={lesson.title}
-              description={lesson.description}
-              href={`/learn/${lesson.level}/${lesson.slug}`}
-            />
-          ))}
-        </div>
-      ) : (
-        <div className="mx-auto max-w-xl rounded-xl bg-white p-8 text-center shadow-md">
-          <p className="text-slate-600">
-            Lessons for this path are coming soon. Check back or start with{" "}
-            <a href="/learn/beginner" className="text-blue-600 font-medium hover:underline">
-              Beginner
-            </a>
-            .
+    <main className="min-h-screen bg-slate-50">
+      <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+        <header className="mb-10 text-center">
+          <span className="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 ring-1 ring-indigo-200">
+            {course.title}
+          </span>
+          <h1 className="mt-4 text-3xl font-extrabold text-slate-900 sm:text-4xl">
+            {course.title} Course
+          </h1>
+          <p className="mt-4 text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+            {course.description}
           </p>
-        </div>
-      )}
-    </PageShell>
+        </header>
+
+        {lessons.length > 0 ? (
+          <ul className="space-y-5">
+            {lessons.map((lesson) => (
+              <li
+                key={lesson.slug}
+                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm ring-1 ring-slate-100 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <div className="flex flex-wrap items-start justify-between gap-4">
+                  <div className="flex-1 min-w-0">
+                    <h2 className="text-lg font-bold text-slate-900">
+                      {lesson.title}
+                    </h2>
+                    <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                      {lesson.description}
+                    </p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {lesson.badges?.map((badge: string) => (
+                        <span
+                          key={badge}
+                          className="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600"
+                        >
+                          {badge}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <Link
+                    href={`/learn/${lesson.level}/${lesson.slug}`}
+                    className="shrink-0 inline-flex items-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 transition-colors"
+                  >
+                    Start Lesson →
+                  </Link>
+                </div>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div className="mx-auto max-w-2xl rounded-xl bg-white p-8 text-center shadow-sm ring-1 ring-slate-100">
+            <p className="text-slate-600">
+              More lessons coming soon. In the meantime, check out the{" "}
+              <Link
+                href="/learn/beginner"
+                className="text-indigo-600 font-medium hover:underline"
+              >
+                Beginner course
+              </Link>
+              .
+            </p>
+          </div>
+        )}
+      </section>
+    </main>
   );
 }

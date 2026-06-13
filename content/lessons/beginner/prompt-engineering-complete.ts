@@ -15,8 +15,8 @@ export const promptEngineeringComplete: Lesson = {
   ],
   heroSubtitle:
     "Master how to design structured prompts to unlock the full power of AI systems.",
-  badges: ["Beginner", "Lesson 9", "12 min read"],
-  order: 9,
+  badges: ["Beginner", "Lesson 8", "12 min read"],
+  order: 8,
   readMinutes: 12,
   publishedAt: "2026-06-04",
   breadcrumbLabel: "Prompt Engineering",

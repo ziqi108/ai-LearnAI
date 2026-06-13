@@ -1,9 +1,14 @@
 import type { Lesson } from "../../../lib/content/types";
 
-export { whatIsRag } from "./what-is-rag";
+// === 新增课程时，在此文件顶部 import 并在数组中添加即可 ===
+// 课程内部的 order 数字决定显示顺序（数字越小越靠前）
 
 import { whatIsRag } from "./what-is-rag";
 
-export const intermediateLessons: Lesson[] = [
+const lessons: Lesson[] = [
   whatIsRag,
-].sort((a, b) => a.order - b.order);
+];
+
+export const intermediateLessons: Lesson[] = lessons
+  .slice()
+  .sort((a, b) => (a.order ?? 999) - (b.order ?? 999));

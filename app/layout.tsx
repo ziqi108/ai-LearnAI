@@ -62,10 +62,13 @@ const websiteJsonLd = {
       url: SITE_URL,
       name: "AI Learn Hub",
       description: "Free AI, LLM, and Prompt Engineering courses for everyone.",
-      inLanguage: "en-US",
+      inLanguage: ["en", "zh-CN"],
       potentialAction: {
         "@type": "SearchAction",
-        target: { "@type": "EntryPoint", urlTemplate: `${SITE_URL}/learn?q={search_term_string}` },
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${SITE_URL}/learn?q={search_term_string}`,
+        },
         "query-input": "required name=search_term_string",
       },
     },
@@ -94,7 +97,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col font-sans">
         <Navbar />
-        {children}
+        <div className="flex-1">{children}</div>
       </body>
     </html>
   );

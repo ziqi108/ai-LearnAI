@@ -9,8 +9,8 @@ export const promptTemplatePractical: Lesson = {
   keywords: ["prompt template", "prompt engineering", "AI prompts", "LLM usage"],
   heroSubtitle:
     "Build reusable prompt templates and create real AI features with copy-paste examples.",
-  badges: ["Beginner", "Lesson", "15 min read"],
-  order: 12,
+  badges: ["Beginner", "Lesson 10", "15 min read"],
+  order: 10,
   readMinutes: 15,
   publishedAt: "2026-06-09",
   breadcrumbLabel: "Prompt Templates",

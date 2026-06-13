@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import type { Article } from "@/lib/content/types";
 import { Breadcrumbs } from "./Breadcrumbs";
@@ -18,14 +20,12 @@ export function ArticleLayout({ article }: { article: Article }) {
 
           <Link
             href="/"
-            className="text-sm font-medium text-blue-600 hover:underline"
+            className="text-sm font-medium text-indigo-600 hover:underline"
           >
             ← Back to home
           </Link>
 
-          <h1 className="mt-4 text-3xl font-bold text-slate-900">
-            {article.title}
-          </h1>
+          <h1 className="mt-4 text-3xl font-bold text-slate-900">{article.title}</h1>
           <p className="mt-2 text-slate-500">{article.description}</p>
 
           <div

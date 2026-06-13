@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import type { Lesson } from "@/lib/content/types";
 import { Breadcrumbs } from "./Breadcrumbs";
@@ -13,11 +15,7 @@ export function LessonLayout({ lesson }: { lesson: Lesson }) {
     <PageShell variant="article" className="!p-0">
       <div className="bg-gradient-to-br from-indigo-600 to-violet-700 text-white px-4 sm:px-6">
         <div className="mx-auto max-w-3xl">
-          <PageHero
-            title={lesson.title}
-            subtitle={lesson.heroSubtitle}
-            badges={lesson.badges}
-          />
+          <PageHero title={lesson.title} subtitle={lesson.heroSubtitle} badges={lesson.badges} />
         </div>
       </div>
 
@@ -33,7 +31,7 @@ export function LessonLayout({ lesson }: { lesson: Lesson }) {
 
           <Link
             href={`/learn/${lesson.level}`}
-            className="inline-flex items-center text-sm font-medium text-blue-600 hover:underline mb-6"
+            className="inline-flex items-center text-sm font-medium text-indigo-600 hover:underline mb-6"
           >
             ← Back to course
           </Link>
@@ -45,7 +43,7 @@ export function LessonLayout({ lesson }: { lesson: Lesson }) {
               <h3 className="text-lg font-semibold text-slate-900">Next Lesson</h3>
               <Link
                 href={`/learn/${lesson.level}/${lesson.nextLesson.slug}`}
-                className="mt-4 inline-flex rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
+                className="mt-4 inline-flex rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-500 transition-colors"
               >
                 {lesson.nextLesson.label}
               </Link>

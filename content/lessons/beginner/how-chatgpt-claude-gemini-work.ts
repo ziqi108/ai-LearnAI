@@ -16,8 +16,8 @@ export const howChatgptClaudeGeminiWork: Lesson = {
   ],
   heroSubtitle:
     "Understand the core ideas behind modern AI assistants without heavy math or technical jargon.",
-  badges: ["Beginner", "Lesson 10", "18 min read"],
-  order: 10,
+  badges: ["Beginner", "Lesson 9", "18 min read"],
+  order: 9,
   readMinutes: 18,
   publishedAt: "2026-06-09",
   breadcrumbLabel: "How AI Models Work",

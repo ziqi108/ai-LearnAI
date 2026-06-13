@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 export function LessonListCard({
@@ -15,7 +17,7 @@ export function LessonListCard({
       <p className="mt-2 text-slate-600">{description}</p>
       <Link
         href={href}
-        className="mt-4 inline-flex rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700"
+        className="mt-4 inline-flex rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-500 transition-colors"
       >
         Start Lesson →
       </Link>
