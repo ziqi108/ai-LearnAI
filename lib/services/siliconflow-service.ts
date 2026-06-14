@@ -68,7 +68,6 @@ Output ONLY valid JSON, no other text!`;
 
     console.log("SiliconFlow: Calling API with goal:", goal.substring(0, 50));
     
-    // 使用流式响应来避免超时问题
     const stream = await siliconflow.chat.completions.create({
       model: "Qwen/Qwen2.5-7B-Instruct",
       messages: [
@@ -77,7 +76,6 @@ Output ONLY valid JSON, no other text!`;
       ],
       temperature: 0.7,
       max_tokens: 1500,
-      timeout: 120000, // 2分钟超时
       stream: true,
     });
 
